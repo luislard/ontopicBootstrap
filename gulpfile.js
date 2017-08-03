@@ -13,6 +13,7 @@ var uglify = require("gulp-uglify");
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
 var cssnano = require("cssnano");
+var concat = require("gulp-concat");
 
 // source and distribution folder
 var
@@ -32,7 +33,7 @@ gulp.task('default', ["html","js", "sass"], function () {
     gulp.watch(["src/**/*.html"], ["html"]);
 
     // observa cambios en los archivos JS y entonces ejecuta la tarea 'js'
-    gulp.watch(["src/js/**/*.js"], ["js"]);
+    gulp.watch(["src/js/*.js"], ["js"]);
 });    
     
 // Bootstrap scss source
@@ -60,7 +61,7 @@ var scss = {
 };
 // Our scss source folder: .scss files
 var js = {
-    in: source + 'js/main.js',
+    in: source + 'js/concat/concat.js',
     out: dest + 'js/'
 };
 
@@ -88,7 +89,18 @@ gulp.task('sass', ['fonts'], function () {
         .pipe(notify("SASS Compilado 🤘🏻")); // muestra notifiación en pantalla
 });
 
-gulp.task("js", function(){
+// concatena las librerias externas y las propias en un solo js
+gulp.task("concat-js", function(){
+    return gulp.src([
+                    "./src/js/*.js",
+                    "node_modules/bootstrap-sass/assets/javascripts/bootstrap.js",
+                    "node_modules/jquery/dist/jquery.js"
+                ])
+               .pipe(concat('concat.js'))
+               .pipe(gulp.dest('./src/js/concat/'));
+});
+
+gulp.task("js",["concat-js"],function(){
     gulp.src([
               js.in
             ])
