@@ -1,6 +1,8 @@
 $logo-font: 'Kaushan Script';
 $font-navbar-color: white;
 $navbar-bg-color: #FD7400;
+$navbar-color-contrast1: white;
+$navbar-color-contrast2: $navbar-bg-color;
 
 
 .navbar .container-fluid {
@@ -25,11 +27,54 @@ $navbar-bg-color: #FD7400;
                 margin-right:5px;
 
                 .icon-bar {
-                    background-color: #fff;
+                    background-color: $navbar-color-contrast1;
                     width: 4px;
                     height: 4px;
+                    border-radius: 50%;
                 }
             // }
         }
     }
+
+    .navbar-collapse {
+        
+        li {
+            a{
+                &:hover {
+                    background-color: $navbar-color-contrast1;
+                    color: $navbar-bg-color;
+
+                }
+                &:focus {
+                    background-color: $navbar-color-contrast1;
+                    color: $navbar-bg-color;
+
+                }
+            }
+        }
+        &[aria-expanded="true"] { // works when collapsed
+            .navbar-nav {
+                li {
+
+                    border-bottom: 2px solid #eeeeee;
+                    a {
+                        
+                        background-color: $navbar-color-contrast1;
+                        color: $navbar-bg-color;
+                        &:hover {
+                            background-color: $navbar-bg-color;
+                            color: $navbar-color-contrast1;
+
+                        }
+                        &:focus {
+                            background-color: $navbar-bg-color;
+                            color: $navbar-color-contrast1;
+
+                        }               
+                    }
+                }  
+            }
+        }
+    }
+    
 }
