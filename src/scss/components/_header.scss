@@ -1,7 +1,7 @@
 $logo-font: 'Kaushan Script';
-$font-navbar-color: white;
+$font-navbar-color: #ffffff;
 $navbar-bg-color: #FD7400;
-$navbar-color-contrast1: white;
+$navbar-color-contrast1: #ffffff;
 $navbar-color-contrast2: $navbar-bg-color;
 
 
@@ -73,6 +73,11 @@ $navbar-color-contrast2: $navbar-bg-color;
                         }               
                     }
                 }  
+            }
+        }
+        .dropdown-menu {
+            li {
+                background-color: $navbar-bg-color;
             }
         }
     }
