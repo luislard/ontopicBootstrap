@@ -8,4 +8,4 @@
 .DS_Store
 
 # Ignoring concat folder
-/concat/
+/js/concat/
