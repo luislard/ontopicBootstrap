@@ -19,6 +19,16 @@ $navbar-color-contrast2: $navbar-bg-color;
             color: $font-navbar-color;
         }
 
+        .search-button {
+            // margin-right: 30px;
+            font-size: 20px;
+            margin-bottom: 0;
+            margin-right: 0;
+            color: $font-navbar-color;
+            padding: 8px 5px;
+
+        }
+
         .navbar-toggle {
             // &.collapsed {
 
