@@ -3,3 +3,19 @@
 @import "override-variables";
 @import "bootstrap-custom";
 @import "bootstrap/theme";
+
+$logo-font: 'Kaushan Script';
+$logo-navbar-color: white;
+$navbar-bg-color: #FD7400;
+
+
+.navbar-header {
+
+    background-color: $navbar-bg-color;
+
+    .navbar-brand {
+        font-family: $logo-font, cursive;
+        color: $logo-navbar-color;
+    }
+}
+
