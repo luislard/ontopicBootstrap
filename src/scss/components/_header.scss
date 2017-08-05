@@ -1,0 +1,35 @@
+$logo-font: 'Kaushan Script';
+$font-navbar-color: white;
+$navbar-bg-color: #FD7400;
+
+
+.navbar .container-fluid {
+    background-color: $navbar-bg-color;
+    
+    a {
+        color: $font-navbar-color;
+    }
+    .navbar-header {
+
+
+        .navbar-brand {
+            font-family: $logo-font, cursive;
+            color: $font-navbar-color;
+        }
+
+        .navbar-toggle {
+            // &.collapsed {
+
+                background-color: transparent;
+                border: none;
+                margin-right:5px;
+
+                .icon-bar {
+                    background-color: #fff;
+                    width: 4px;
+                    height: 4px;
+                }
+            // }
+        }
+    }
+}
