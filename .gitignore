@@ -6,3 +6,6 @@
 
 # Ignoring mac file
 .DS_Store
+
+# Ignoring concat folder
+/concat/

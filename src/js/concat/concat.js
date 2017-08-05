@@ -1,6 +1,6 @@
 window.jQuery = require("jquery"); // Hace jQuery accesible públicamente
 
-alert("hola");
+
 
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
