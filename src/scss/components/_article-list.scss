@@ -1,7 +1,63 @@
+$card-background-color: $font-navbar-color;
+$card-header-color: #737373;
+$card-header-font-size: 24px;
+$card-desc-font-size: 14px;
+$card-stats-font-size: 12px;
+$card-padding: 7px;
+
 .article-list {
     .article {
+        background-color: $card-background-color;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        border-radius: 2px;
+        padding: 0;
+        &:hover {
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+
         .article-img {
+            // object-fit: contain;
             width: 100%;
+        }
+        .article-title {
+            padding: $card-padding;
+            font-size: $card-header-font-size;
+            color: $card-header-color;
+            text-align: center;
+            font-weight: 300;
+        }
+        .short-desc {
+            padding: $card-padding;
+            font-size: $card-desc-font-size;
+            color: $card-header-color;
+            text-align: justify;
+            font-weight: 300;
+            border-bottom: 1px solid #C4C4C4;
+            margin-bottom: 3px;
+        }
+        .article-stats {
+            padding: $card-padding;
+            font-size: $card-stats-font-size;
+            color: $card-header-color;
+            text-align: justify;
+            font-weight: 300;
+            border-bottom: 1px solid #C4C4C4;
+            .published-time {
+                padding: $card-padding;
+                display: inline-block;
+                width: 70%;
+            }
+            .msg-count {
+                padding: $card-padding;
+                display: inline-block;
+                width: 15%;
+            }
+            .fav-count {
+                padding: $card-padding;
+                display: inline-block;
+                width: 15%;
+            }
         }
     }
 }
