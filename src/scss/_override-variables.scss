@@ -876,3 +876,13 @@ $dl-horizontal-offset:        $component-offset-horizontal !default;
 $dl-horizontal-breakpoint:    $grid-float-breakpoint !default;
 //** Horizontal line color.
 $hr-border:                   $gray-lighter !default;
+
+
+
+// injecting responsive overrides
+
+// Responsive
+$mobile-portrait-width: 375px;
+$mobile-landscape-width: 767px;
+$tablet-portrait-width: $mobile-landscape-width + 1;
+$tablet-landscape-width: 1024px;

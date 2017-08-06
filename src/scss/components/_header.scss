@@ -13,22 +13,6 @@ $navbar-color-contrast2: $navbar-bg-color;
     }
     .navbar-header {
 
-
-        .navbar-brand {
-            font-family: $logo-font, cursive;
-            color: $font-navbar-color;
-        }
-
-        .search-button {
-            // margin-right: 30px;
-            font-size: 20px;
-            margin-bottom: 0;
-            margin-right: 0;
-            color: $font-navbar-color;
-            padding: 8px 5px;
-
-        }
-
         .navbar-toggle {
             // &.collapsed {
 
@@ -44,9 +28,56 @@ $navbar-color-contrast2: $navbar-bg-color;
                 }
             // }
         }
+        .navbar-brand {
+            font-family: $logo-font, cursive;
+            color: $font-navbar-color;
+        }
+
+        .search-button {
+            // margin-right: 30px;
+            font-size: 20px;
+            margin-bottom: 0;
+            margin-right: 0;
+            color: $font-navbar-color;
+            padding: 8px 5px;
+            cursor: pointer;
+
+        }
+
+        .search-input {
+                // float:right;
+                margin: 8px 15px 0 0;
+                width: 40%;
+                color: $font-navbar-color;
+                border-bottom: 2px solid $font-navbar-color;
+                border-radius: 0;
+                padding-bottom: 1px;
+        }
+
+        
     }
 
     .navbar-collapse {
+        .search-container {
+
+            .search-button {
+                float:right;
+                background-color: transparent;
+                border: none;
+                color: $font-navbar-color;
+                font-size: 20px;
+                margin: 11px 0 0 0;
+                &:focus {
+                    outline: none;
+                }
+            }
+            .search-input {
+                float:right;
+                margin: 11px 15px 0 0;
+                width: 40%;
+                color: $font-navbar-color;
+            }
+        }
         
         li {
             a{
