@@ -92,7 +92,7 @@ gulp.task('sass', ['fonts'], function () {
 // concatena las librerias externas y las propias en un solo js
 gulp.task("concat-js", function(){
     return gulp.src([
-                    "./src/js/*.js",
+                    "./src/js/main.js",
                     "node_modules/bootstrap-sass/assets/javascripts/bootstrap.js",
                     "node_modules/jquery/dist/jquery.js"
                 ])
