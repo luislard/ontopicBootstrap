@@ -14,28 +14,13 @@ var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
 var cssnano = require("cssnano");
 var concat = require("gulp-concat");
+var imagemin = require("imagemin");
 
 // source and distribution folder
 var
     source = 'src/',
     dest = 'dist/';
 
-// default task
-gulp.task('default', ["html","js", "sass"], function () {
-    // iniciamos el servidor de desarrollo
-    browserSync.init({ 
-        server: "dist/"
-    });
-    
-    gulp.watch(scss.watch, ['sass']);
-
-    // observa cambios en los archivos HTML y entonces ejecuta la tarea 'html'
-    gulp.watch(["src/**/*.html"], ["html"]);
-
-    // observa cambios en los archivos JS y entonces ejecuta la tarea 'js'
-    gulp.watch(["src/js/*.js"], ["js"]);
-});    
-    
 // Bootstrap scss source
 var bootstrapSass = {
         in: './node_modules/bootstrap-sass/'
@@ -65,6 +50,21 @@ var js = {
     out: dest + 'js/'
 };
 
+// default task
+gulp.task('default', ["img","html", "sass", "js"], function () {
+    // iniciamos el servidor de desarrollo
+    browserSync.init({ 
+        server: "dist/"
+    });
+    
+    gulp.watch(scss.watch, ['sass']);
+
+    // observa cambios en los archivos HTML y entonces ejecuta la tarea 'html'
+    gulp.watch(["src/**/*.html"], ["html"]);
+
+    // observa cambios en los archivos JS y entonces ejecuta la tarea 'js'
+    gulp.watch(["src/js/*.js"], ["js"]);
+});    
 
 // copy bootstrap required fonts to dest
 gulp.task('fonts', function () {
@@ -130,5 +130,19 @@ gulp.task("html", function(){
         .pipe(gulp.dest("dist/"))
         .pipe(browserSync.stream())
         .pipe(notify("HTML importado"));
+});
+
+// tarea que optimiza y crea las imágenes responsive
+gulp.task("img", function(){
+    gulp.src("src/img/*")
+        // .pipe(responsive({ // generamos las versiones responsive
+        //     '*': [
+        //         { width: 150, rename: { suffix: "-150px"}},
+        //         { width: 250, rename: { suffix: "-250px"}},
+        //         { width: 300, rename: { suffix: "-300px"}}
+        //     ]
+        // }))
+        // .pipe(imagemin()) // optimizamos el peso de las imágenes
+        .pipe(gulp.dest("dist/img/"))
 });
 
