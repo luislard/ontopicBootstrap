@@ -7,6 +7,7 @@ $navbar-color-contrast2: $navbar-bg-color;
 
 .navbar .container-fluid {
     background-color: $navbar-bg-color;
+    opacity: 0.8;
     
     a {
         color: $font-navbar-color;
