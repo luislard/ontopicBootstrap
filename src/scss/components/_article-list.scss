@@ -55,9 +55,50 @@ $card-padding: 7px;
             }
             .fav-count {
                 padding: $card-padding;
-                display: inline-block;
+                display: inline;
                 width: 15%;
             }
+        }
+
+        .article-author {
+            width: 100%;
+            margin: auto;
+            padding: 5px;
+            display: block;
+            border-bottom: 1px solid #C4C4C4;
+            .wrapper {
+                width: 95%;
+                margin: auto;
+                text-align: center;
+                .author-img-container {
+                    width: 30%;
+                    display: inline-block;
+
+
+                    .article-author-img {
+                        
+                        width: 100%;
+                        border-radius: 50%;
+                    }
+                }
+                .author-text-container {
+                    width: 60%;
+                    display: inline-block;
+
+                    .label {
+                        color: $card-header-color;
+                        font-size: 14px;
+                        padding: 0;
+
+                    }
+
+                    .author-name {
+                        text-decoration: underline;
+                        font-size: 20px;
+                    }
+                }
+            }
+            
         }
     }
 }
