@@ -77,8 +77,8 @@ $separator-color: lighten(#C4C4C4, 10%);
 
             .article-author {
                 width: 100%;
-                margin: auto;
-                padding: 5px;
+                margin: auto auto auto auto;
+                padding: 5px 5px 20px 5px;
                 display: block;
                 // border-bottom: 1px solid $separator-color;
                 .wrapper {
@@ -116,27 +116,6 @@ $separator-color: lighten(#C4C4C4, 10%);
                     }
                 }
                 
-            }
-            .action-buttons {
-                display: block;
-                .material-button {
-                    width: 50%;
-                    box-sizing: border-box;
-                    // border-right: 1px solid $separator-color;
-                    display: inline-block;
-                    text-align: center;
-                    .push-icon {
-                        display: block;
-                        font-size: 18px;
-                        padding: 5px;
-                        color: $card-header-color;
-                    }
-                    .msg-label {
-                        display: block;
-                        color: $card-header-color;
-                        font-size: 12px;
-                    }
-                }
             }
         }
     }
