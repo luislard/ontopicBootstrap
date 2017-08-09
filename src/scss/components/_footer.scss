@@ -1,0 +1,16 @@
+.footer {
+    background-color: $navbar-bg-color;
+    opacity: 0.8;
+    height: 40px;
+    text-align: center;
+
+    .copyright {
+        font-size: 12px;
+        padding: 15px;
+        display: inline-block;
+        color: $font-navbar-color;
+    }
+    .gototop {
+        background-color: transparent;
+    }
+}
