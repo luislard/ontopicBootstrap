@@ -34,7 +34,7 @@ var fonts = {
 
 // Our scss source folder: .scss files
 var scss = {
-    in: source + 'scss/main.scss',
+    in: [source + 'scss/main.scss',source + 'scss/detail.scss'],
     out: dest + 'css/',
     watch: source + 'scss/**/*',
     sassOpts: {
@@ -99,8 +99,18 @@ gulp.task("concat-js", function(){
                .pipe(concat('concat.js'))
                .pipe(gulp.dest('./src/js/concat/'));
 });
+// concatena las librerias externas y las propias en un solo js
+gulp.task("concat-js-detail", function(){
+    return gulp.src([
+                    "./src/js/detail.js",
+                    "node_modules/bootstrap-sass/assets/javascripts/bootstrap.js",
+                    "node_modules/jquery/dist/jquery.js"
+                ])
+               .pipe(concat('concat-detail.js'))
+               .pipe(gulp.dest('./src/js/concat/'));
+});
 
-gulp.task("js",["concat-js"],function(){
+gulp.task("js",["concat-js","concat-js-detail"],function(){
     gulp.src([
               js.in
             ])

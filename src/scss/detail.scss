@@ -1,0 +1,11 @@
+/* main.scss */
+
+@import "override-variables";
+@import "bootstrap-custom";
+@import "responsive_utils";
+@import "html-tags";
+
+// components
+@import "components/header";
+@import "components/footer";
+@import "components/article-detail";
