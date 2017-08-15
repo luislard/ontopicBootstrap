@@ -46,7 +46,7 @@ var scss = {
 };
 // Our scss source folder: .scss files
 var js = {
-    in: source + 'js/concat/concat.js',
+    in: source + 'js/concat/*.js',
     out: dest + 'js/'
 };
 
