@@ -33,6 +33,7 @@
     "postcss": "^6.0.8"
   },
   "dependencies": {
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "json-server": "^0.12.0"
   }
 }
