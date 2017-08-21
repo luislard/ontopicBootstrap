@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "json-server --static ./dist --port 3100 db.json"
   },
   "keywords": [],
   "author": "",
@@ -34,6 +35,7 @@
     "postcss": "^6.0.8"
   },
   "dependencies": {
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "pubsub-js": "^1.5.7"
   }
 }
