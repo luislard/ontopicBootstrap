@@ -54,7 +54,9 @@ var js = {
 gulp.task('default', ["img","html", "sass", "js"], function () {
     // iniciamos el servidor de desarrollo
     browserSync.init({ 
-        server: "dist/"
+        // server: "dist/"
+        proxy: "http://localhost:3100/"
+
     });
     
     gulp.watch(scss.watch, ['sass']);
