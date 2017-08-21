@@ -52,22 +52,22 @@ export default class ArticleListManager extends UIManager {
     renderArticle(article) {
         return `<article class="col-xs-12 col-sm-6 col-md-4 article" data-id="${article.id}">
                     <div class="article-wrapper">
-                        <img src="${article.cover}" alt="${article.cover-alt}" class="article-img">
+                        <img src="${article.cover}" alt="${article.cover_alt}" class="article-img">
                         <div class="article-stats">
                             <div class="published-time">Published: <span class="text">${article.published_at}</span></div>
                             <div class="msg-count"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> <span class="count">${article.comments.length}</span></div>
                             <div class="share-icon"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></div>
                         </div>
                         <header class="article-title">${article.title}</header>
-                        <p class="short-desc">${article.short-descrtiption}</p>
+                        <p class="short-desc">${article.short_description}</p>
                         <div class="article-author">
                             <div class="wrapper">
                                 <div class="author-img-container">
-                                    <img src="${article.author-img}" alt="${article.author-name}" class="article-author-img"/>
+                                    <img src="${article.author_img}" alt="${article.author_name}" class="article-author-img"/>
                                 </div>
                                 <div class="author-text-container">
                                     <div class="label">About the author:</div>
-                                    <div class="author-name">${article.author-name}</div>
+                                    <div class="author-name">${article.author_name}</div>
                                 </div>
                             </div>
                         </div>
