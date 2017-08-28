@@ -1,4 +1,6 @@
 import UIManager from './UIManager';
+// import * as moment from 'moment';
+let moment = require('moment');
 
 export default class ArticleListManager extends UIManager {
 
@@ -54,7 +56,7 @@ export default class ArticleListManager extends UIManager {
                     <div class="article-wrapper">
                         <img src="${article.cover}" alt="${article.cover_alt}" class="article-img">
                         <div class="article-stats">
-                            <div class="published-time">Published: <span class="text">${article.published_at}</span></div>
+                            <div class="published-time">Published: <span class="text">${this.writeDate(article.published_at)}</span></div>
                             <div class="stats-buttons">
                                 <div class="msg-count"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> <span class="count">${article.comments.length}</span></div>
                                 <div class="fav-count"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> <span class="count">0</span></div>
@@ -85,6 +87,33 @@ export default class ArticleListManager extends UIManager {
         }, error => {
             this.setError();
         })
+    }
+
+    writeDate(dateStr){
+        const date = moment(dateStr);
+        const now = moment(new Date());
+
+        let diffSec = now.diff(date, 'seconds');
+        let diffMin = now.diff(date, 'minutes');
+        let diffHours = now.diff(date, 'hours');
+        let diffDays = now.diff(date, 'days');
+
+        if (diffSec <= 60){
+            return diffSec + ' seconds ago';
+
+        }else if(diffMin <= 60){
+            return diffMin + ' minutes ago';
+        }else if(diffHours <= 24){
+            return diffHours + ' hours ago';
+
+        }else if(diffDays <= 7){
+            return 'on ' + date.format('dddd');
+
+        }else{
+            return 'at ' + date.format('YYYY MM DD');
+
+        }
+
     }
 
 }
