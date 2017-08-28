@@ -56,22 +56,32 @@ $separator-color: lighten(#C4C4C4, 10%);
                 .published-time {
                     padding: 7px 7px 3px 7px;
                     display: inline-block;
-                    width: 65%;
+                    width: 62%;
+                    box-sizing: border-box;
                 }
-                .msg-count {
-                    padding: 7px 0 3px 0;
+                .stats-buttons{
+                    width: 35%;
                     display: inline-block;
-                    width: 15%;
-                }
-                .fav-count {
-                    padding: 7px 0 3px 0;
-                    display: inline-block;
-                    width: 15%;
-                }
-                .share-icon {
-                    padding: 7px 0 3px 0;
-                    display: inline-block;
-                    width: 5%;
+                    box-sizing: border-box;
+                    white-space: nowrap;
+                    .msg-count {
+                        padding: 7px 0 3px 0;
+                        display: inline-block;
+                        width: 40%;
+                        box-sizing: border-box;
+                    }
+                    .fav-count {
+                        padding: 7px 0 3px 0;
+                        display: inline-block;
+                        width: 40%;
+                        box-sizing: border-box;
+                    }
+                    .share-icon {
+                        padding: 7px 0 3px 0;
+                        display: inline-block;
+                        width: 17%;
+                        box-sizing: border-box;
+                    }
                 }
             }
 

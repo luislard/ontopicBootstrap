@@ -55,8 +55,11 @@ export default class ArticleListManager extends UIManager {
                         <img src="${article.cover}" alt="${article.cover_alt}" class="article-img">
                         <div class="article-stats">
                             <div class="published-time">Published: <span class="text">${article.published_at}</span></div>
-                            <div class="msg-count"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> <span class="count">${article.comments.length}</span></div>
-                            <div class="share-icon"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></div>
+                            <div class="stats-buttons">
+                                <div class="msg-count"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> <span class="count">${article.comments.length}</span></div>
+                                <div class="fav-count"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> <span class="count">0</span></div>
+                                <div class="share-icon"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></div>
+                            </div>
                         </div>
                         <header class="article-title">${article.title}</header>
                         <p class="short-desc">${article.short_description}</p>
