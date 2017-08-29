@@ -1,5 +1,6 @@
 import UIManager from './UIManager';
 // import * as moment from 'moment';
+const $ = require("jquery");
 let moment = require('moment');
 
 export default class ArticleListManager extends UIManager {
@@ -13,9 +14,25 @@ export default class ArticleListManager extends UIManager {
     init() {
         this.loadArticles();
         let self = this;
-        this.element.on("click", ".article", function() {
-            let songId = this.dataset.id;
-            self.deleteSong(songId);
+        // this.element.on("click", ".article", function() {
+        //     let articleId = this.dataset.id;
+        //     self.deleteSong(articleId);
+        // });
+        this.element.on("click", ".fav-count", function() {
+            let articleId = $(this).parents('.article').data('id');
+            self.articleService.getDetail(articleId, function(data){ 
+                console.log('article',data);
+                console.log('comments',data.comments);
+                let newQty = parseInt(data.likes_qty) + 1;
+                data.likes_qty = newQty;
+                
+                let article = data;
+                self.articleService.update(article, function(data){alert('updated');console.log(data);},function(){alert('something hapened during the updating')});
+
+            }, function(){alert('Something happened when trying to retrieve the data from article'+articleId);});
+             
+            // self.articleService.update();
+            // console.log(articleId);
         });
         this.pubSub.subscribe("new-article", (topic, song) => {
             this.loadSongs();
@@ -59,7 +76,7 @@ export default class ArticleListManager extends UIManager {
                             <div class="published-time">Published: <span class="text">${this.writeDate(article.published_at)}</span></div>
                             <div class="stats-buttons">
                                 <div class="msg-count"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> <span class="count">${article.comments.length}</span></div>
-                                <div class="fav-count"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> <span class="count">0</span></div>
+                                <div class="fav-count"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> <span class="count">${article.likes_qty}</span></div>
                                 <div class="share-icon"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></div>
                             </div>
                         </div>
@@ -110,7 +127,7 @@ export default class ArticleListManager extends UIManager {
             return 'on ' + date.format('dddd');
 
         }else{
-            return 'at ' + date.format('YYYY MM DD');
+            return 'at ' + date.format('YYYY-MM-DD HH:mm:ss');
 
         }
 

@@ -46,10 +46,14 @@ export default class ArticleService {
 
     // Actualizar una articulo
     update(article, successCallback, errorCallback) {
+
+        let articleData = JSON.stringify(article);
+
         $.ajax({
             url: `${this.url}${article.id}`,
             method: "put",
-            data: article,
+            data: articleData,
+            contentType: "application/json",
             success: successCallback,
             error: errorCallback
         })
