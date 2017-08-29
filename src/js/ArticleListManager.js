@@ -21,13 +21,10 @@ export default class ArticleListManager extends UIManager {
         this.element.on("click", ".fav-count", function() {
             let articleId = $(this).parents('.article').data('id');
             self.articleService.getDetail(articleId, function(data){ 
-                console.log('article',data);
-                console.log('comments',data.comments);
                 let newQty = parseInt(data.likes_qty) + 1;
                 data.likes_qty = newQty;
-                
                 let article = data;
-                self.articleService.update(article, function(data){alert('updated');console.log(data);},function(){alert('something hapened during the updating')});
+                self.articleService.update(article, function(data){self.pubSub.publish("update-article", data);alert('updated');console.log(data);},function(){alert('something hapened during the updating')});
 
             }, function(){alert('Something happened when trying to retrieve the data from article'+articleId);});
              
@@ -36,6 +33,9 @@ export default class ArticleListManager extends UIManager {
         });
         this.pubSub.subscribe("new-article", (topic, song) => {
             this.loadSongs();
+        });
+        this.pubSub.subscribe("update-article", (topic, article) => {
+            this.loadArticles();
         });
     }
 

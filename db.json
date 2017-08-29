@@ -10,7 +10,7 @@
       "author_name": "Luis Rosales",
       "author_img": "../img/author.jpeg",
       "published_at": "2017-08-29 20:00:14",
-      "likes_qty": 11,
+      "likes_qty": 14,
       "comments": [
         {
           "id": "1"
@@ -30,7 +30,7 @@
       "author_name": "Luis Rosales",
       "author_img": "../img/author.jpeg",
       "published_at": "2017-08-29 20:00:14",
-      "likes_qty": "11",
+      "likes_qty": 12,
       "comments": [
         {
           "id": "1"
@@ -50,7 +50,7 @@
       "author_name": "Luis Rosales",
       "author_img": "../img/author.jpeg",
       "published_at": "2017-08-28 13:23:40",
-      "likes_qty": "12",
+      "likes_qty": 13,
       "comments": [
         {
           "id": "1"
@@ -70,7 +70,7 @@
       "author_name": "Luis Rosales",
       "author_img": "../img/author.jpeg",
       "published_at": "2017-07-08 07:32:33",
-      "likes_qty": "13",
+      "likes_qty": 14,
       "comments": [
         {
           "id": "1"
