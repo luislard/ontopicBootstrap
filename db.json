@@ -1,0 +1,84 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "Latindada.com new technologies",
+      "short_description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
+      "cover": "../img/containers.jpg",
+      "cover_alt": "containers",
+      "description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
+      "author_name": "Luis Rosales",
+      "author_img": "../img/author.jpeg",
+      "published_at": "2017-08-29 20:00:14",
+      "likes_qty": 17,
+      "comments": [
+        {
+          "id": "1"
+        },
+        {
+          "id": "2"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Latindada.com new technologies",
+      "short_description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
+      "cover": "../img/containers.jpg",
+      "cover_alt": "containers",
+      "description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
+      "author_name": "Luis Rosales",
+      "author_img": "../img/author.jpeg",
+      "published_at": "2017-08-29 20:00:14",
+      "likes_qty": 13,
+      "comments": [
+        {
+          "id": "1"
+        },
+        {
+          "id": "2"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Latindada.com new technologies",
+      "short_description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
+      "cover": "../img/containers.jpg",
+      "cover_alt": "containers",
+      "description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
+      "author_name": "Luis Rosales",
+      "author_img": "../img/author.jpeg",
+      "published_at": "2017-08-28 13:23:40",
+      "likes_qty": 13,
+      "comments": [
+        {
+          "id": "1"
+        },
+        {
+          "id": "2"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Latindada.com new technologies",
+      "short_description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
+      "cover": "../img/containers.jpg",
+      "cover_alt": "containers",
+      "description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
+      "author_name": "Luis Rosales",
+      "author_img": "../img/author.jpeg",
+      "published_at": "2017-07-08 07:32:33",
+      "likes_qty": 14,
+      "comments": [
+        {
+          "id": "1"
+        },
+        {
+          "id": "2"
+        }
+      ]
+    }
+  ]
+}

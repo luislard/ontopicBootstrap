@@ -9,3 +9,6 @@
 
 # Ignoring concat folder
 src/js/concat/
+
+# Ignoring temp folder
+src/temp/
