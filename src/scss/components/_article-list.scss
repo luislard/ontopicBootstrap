@@ -75,6 +75,9 @@ $separator-color: lighten(#C4C4C4, 10%);
                         display: inline-block;
                         width: 40%;
                         box-sizing: border-box;
+                        &.liked{
+                            color: red;
+                        }
                     }
                     .share-icon {
                         padding: 7px 0 3px 0;

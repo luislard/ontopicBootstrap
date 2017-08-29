@@ -19,14 +19,7 @@ export default class ArticleListManager extends UIManager {
         //     self.deleteSong(articleId);
         // });
         this.element.on("click", ".fav-count", function() {
-            let articleId = $(this).parents('.article').data('id');
-            self.articleService.getDetail(articleId, function(data){ 
-                let newQty = parseInt(data.likes_qty) + 1;
-                data.likes_qty = newQty;
-                let article = data;
-                self.articleService.update(article, function(data){self.pubSub.publish("update-article", data);alert('updated');console.log(data);},function(){alert('something hapened during the updating')});
-
-            }, function(){alert('Something happened when trying to retrieve the data from article'+articleId);});
+            self.likeArticle(this);
              
             // self.articleService.update();
             // console.log(articleId);
@@ -69,6 +62,13 @@ export default class ArticleListManager extends UIManager {
     }
 
     renderArticle(article) {
+
+        let likedClass = '';
+        let isLiked = localStorage.getItem(article.id);
+        
+        if(isLiked == 'true'){
+            likedClass = 'liked';
+        }
         return `<article class="col-xs-12 col-sm-6 col-md-4 article" data-id="${article.id}">
                     <div class="article-wrapper">
                         <img src="${article.cover}" alt="${article.cover_alt}" class="article-img">
@@ -76,7 +76,7 @@ export default class ArticleListManager extends UIManager {
                             <div class="published-time">Published: <span class="text">${this.writeDate(article.published_at)}</span></div>
                             <div class="stats-buttons">
                                 <div class="msg-count"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> <span class="count">${article.comments.length}</span></div>
-                                <div class="fav-count"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> <span class="count">${article.likes_qty}</span></div>
+                                <div class="fav-count ${likedClass}"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> <span class="count">${article.likes_qty}</span></div>
                                 <div class="share-icon"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></div>
                             </div>
                         </div>
@@ -104,6 +104,72 @@ export default class ArticleListManager extends UIManager {
         }, error => {
             this.setError();
         })
+    }
+
+    likeArticle(domElement){
+        let articleId = $(domElement).parents('.article').data('id');
+        this.articleService.getDetail(
+            articleId, 
+            (data) => {
+                this.incrementArticleLike(data);
+            },
+            function(){alert('Something happened when trying to retrieve the data from article'+articleId);}
+        );
+
+
+
+            // self.articleService.getDetail(articleId, function(data){ 
+            //     let newQty = parseInt(data.likes_qty) + 1;
+            //     data.likes_qty = newQty;
+            //     let article = data;
+            //     self.articleService.update(article, function(data){self.pubSub.publish("update-article", data);alert('updated');console.log(data);},function(){alert('something hapened during the updating')});
+
+            // }, function(){alert('Something happened when trying to retrieve the data from article'+articleId);});
+    }
+
+
+
+    incrementArticleLike(articleData){
+            let newQty;
+            let isLiked = false;
+        if(localStorage.getItem(articleData.id) === null || localStorage.getItem(articleData.id) == 'false'){
+            newQty = parseInt(articleData.likes_qty) + 1;
+            isLiked = true;
+        }else{
+            newQty = parseInt(articleData.likes_qty) - 1;
+            isLiked = false;
+        }
+        articleData.likes_qty = newQty;
+        let article = articleData;
+        this.articleService.update(
+            article, 
+            (data) => {
+                this.updateWebStorage(data,isLiked);
+                if(isLiked){
+                    alert('Liked!');
+
+                }else{
+                    alert('Unliked!');
+
+                }
+                this.pubSub.publish("update-article", data);
+                
+                
+            },
+            function(){
+                alert('something hapened during the updating')
+            }
+        );
+    
+    }
+
+    updateWebStorage(article,isLiked){
+        if(isLiked == true){
+            localStorage[article.id] = 'true';
+        }else{
+            localStorage[article.id] = 'false';
+        }
+
     }
 
     writeDate(dateStr){
