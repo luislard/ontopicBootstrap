@@ -2,13 +2,14 @@ const $ = require("jquery");
 
 export default class FooterManager {
 
-    constructor(selector) {
+    constructor(footerSelector, topSelector) {
         
-        this.element = $(selector);
+        this.element = $(footerSelector);
+        this.topSelector = topSelector;
     }
 
     init(){
-
+        let self = this;
         // Add smooth scrolling on all links inside the navbar
         this.element.on('click', function(event) {
             // Make sure this.hash has a value before overriding default behavior
@@ -21,11 +22,9 @@ export default class FooterManager {
                 // Using jQuery's animate() method to add smooth page scroll
                 // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
                 $('html, body').animate({
-                    scrollTop: $('#list-container').offset().top
+                    scrollTop: $(self.topSelector).offset().top
                 }, 800, function(){
             
-                    // Add hash (#) to URL when done scrolling (default click behavior)
-                    window.location.hash = '#list-container';
                 });
             // }  // End if
         });

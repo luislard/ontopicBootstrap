@@ -10,7 +10,7 @@ const articleService = new ArticleService("/articles/");
 const articleListManager = new ArticleListManager(".article-list", articleService, PubSub);
 articleListManager.init();
 
-const footerManager = new FooterManager(".footer");
+const footerManager = new FooterManager(".footer","#list-container",);
 footerManager.init();
 
 
