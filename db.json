@@ -82,13 +82,29 @@
     }
   ],
   "comments": [
-    { 
-      "id": 1, 
-      "article_id": 1, 
-      "first_name":"Nomonombre", 
-      "last_name":"Papellido",
-      "email":"mail@somedomain.com", 
+    {
+      "id": 1,
+      "article_id": 1,
+      "first_name": "Nomonombre",
+      "last_name": "Papellido",
+      "email": "mail@somedomain.com",
       "body": "some comment"
+    },
+    {
+      "id": 2,
+      "article_id": 1,
+      "first_name": "Nomonombre",
+      "last_name": "Papellido",
+      "email": "mail@somedomain.com",
+      "body": "some second comment"
+    },
+    {
+      "id": 3,
+      "article_id": 1,
+      "first_name": "Nomonombre",
+      "last_name": "Papellido",
+      "email": "mail@somedomain.com",
+      "body": "some third comment"
     }
   ]
 }
