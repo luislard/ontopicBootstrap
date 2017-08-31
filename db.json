@@ -80,5 +80,15 @@
         }
       ]
     }
+  ],
+  "comments": [
+    { 
+      "id": 1, 
+      "article_id": 1, 
+      "first_name":"Nomonombre", 
+      "last_name":"Papellido",
+      "email":"mail@somedomain.com", 
+      "body": "some comment"
+    }
   ]
 }
