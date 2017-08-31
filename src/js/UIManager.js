@@ -37,6 +37,7 @@ export default class UIManager {
     }
 
     setErrorHtml(html) {
+        console.log(this.element.find(".ui-status.error"));
         this.element.find(".ui-status.error").html(html);
     }
 
