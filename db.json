@@ -10,7 +10,7 @@
       "author_name": "Luis Rosales",
       "author_img": "../img/author.jpeg",
       "published_at": "2017-08-29 20:00:14",
-      "likes_qty": 17,
+      "likes_qty": 16,
       "comments": [
         {
           "id": "1"
@@ -50,7 +50,7 @@
       "author_name": "Luis Rosales",
       "author_img": "../img/author.jpeg",
       "published_at": "2017-08-28 13:23:40",
-      "likes_qty": 13,
+      "likes_qty": 14,
       "comments": [
         {
           "id": "1"
@@ -70,7 +70,7 @@
       "author_name": "Luis Rosales",
       "author_img": "../img/author.jpeg",
       "published_at": "2017-07-08 07:32:33",
-      "likes_qty": 14,
+      "likes_qty": 15,
       "comments": [
         {
           "id": "1"
@@ -79,6 +79,32 @@
           "id": "2"
         }
       ]
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "article_id": 1,
+      "first_name": "Nomonombre",
+      "last_name": "Papellido",
+      "email": "mail@somedomain.com",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+      "id": 2,
+      "article_id": 1,
+      "first_name": "Nomonombre",
+      "last_name": "Papellido",
+      "email": "mail@somedomain.com",
+      "body": "some second comment"
+    },
+    {
+      "id": 3,
+      "article_id": 1,
+      "first_name": "Nomonombre",
+      "last_name": "Papellido",
+      "email": "mail@somedomain.com",
+      "body": "some third comment"
     }
   ]
 }
