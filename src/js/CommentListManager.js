@@ -18,8 +18,8 @@ export default class CommentListManager extends UIManager {
         //     let articleId = this.dataset.id;
         //     self.deleteSong(articleId);
         // });
-        this.pubSub.subscribe("new-comment", (topic, song) => {
-            this.loadSongs();
+        this.pubSub.subscribe("new-comment", (topic, comment) => {
+            this.loadComments();
         });
     }
 
