@@ -69,10 +69,21 @@ export default class ArticleListManager extends UIManager {
         if(isLiked == 'true'){
             likedClass = 'liked';
         }
-        return `<article class="col-xs-12 col-sm-6 col-md-4 article" data-id="${article.id}">
-                    <div class="article-wrapper">
-                        <img src="${article.cover}" alt="${article.cover_alt}" class="article-img">
-                        <div class="article-stats">
+
+        let html = '';
+
+        html += `<article class="col-xs-12 col-sm-6 col-md-4 article" data-id="${article.id}">
+                    <div class="article-wrapper">`
+                    if(article.video){
+        html +=         `<video  controls class="article-video">
+                            <source src="../videos/${article.video}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>`;
+                    }else{
+        html +=         `<img src="../img/${article.cover}" alt="${article.cover_alt}" class="article-img">`;
+                    }
+
+        html +=         `<div class="article-stats">
                             <div class="published-time">Published: <span class="text">${this.writeDate(article.published_at)}</span></div>
                             <div class="stats-buttons">
                                 <div class="msg-count"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> <span class="count">${article.comments.length}</span></div>
@@ -85,7 +96,7 @@ export default class ArticleListManager extends UIManager {
                         <div class="article-author">
                             <div class="wrapper">
                                 <div class="author-img-container">
-                                    <img src="${article.author_img}" alt="${article.author_name}" class="article-author-img"/>
+                                    <img src="../img/${article.author_img}" alt="${article.author_name}" class="article-author-img"/>
                                 </div>
                                 <div class="author-text-container">
                                     <div class="label">About the author:</div>
@@ -95,6 +106,8 @@ export default class ArticleListManager extends UIManager {
                         </div>
                     </div>
                 </article>`;
+
+                return html;
     }
 
     deleteArticle(articleId) {
@@ -193,7 +206,7 @@ export default class ArticleListManager extends UIManager {
             return 'on ' + date.format('dddd');
 
         }else{
-            return 'at ' + date.format('YYYY-MM-DD HH:mm:ss');
+            return 'at ' + date.format('YYYY-MM-DD');
 
         }
 

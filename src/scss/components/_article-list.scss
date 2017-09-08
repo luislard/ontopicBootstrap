@@ -49,6 +49,10 @@ $separator-color: lighten(#C4C4C4, 10%);
                 // object-fit: contain;
                 width: 100%;
             }
+            .article-video {
+                // object-fit: contain;
+                width: 100%;
+            }
             .article-title {
                 padding: $card-padding;
                 font-size: $card-header-font-size;
