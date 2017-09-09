@@ -36,15 +36,38 @@ export default class ArticleListManager extends UIManager {
         this.articleService.list(articles => {
             // Comprobamos si hay articulos
             if (articles.length == 0) {
+                let emptyHtml = `
+                            <div class="empty-container">
+                                <img src="../img/no_data.png"/>
+                                <p class="empty-msg">
+                                    There is no articles in this moment!
+                                    Please come by later...
+                                </p>
+                            </div>
+                            `;
+                this.setEmptyHtml(emptyHtml);
                 // Mostramos el estado vacío
                 this.setEmpty();
             } else {
                 // Componemos el HTML con todos los articulos
                 this.renderArticles(articles);
+                
+                this.renderPagination();
+                
                 // Quitamos el mensaje de cargando y mostramos la lista de articulos
                 this.setIdeal();
             }
         }, error => {
+
+            let errorHtml = `
+                            <div class="error-container">
+                                <img src="../img/oops.png"/>
+                                <p class="error-msg">
+                                    Oops something happened, please take a screenshot of this page and send us a message to eng.luisrosales@gmail.com
+                                </p>
+                            </div>
+                            `;
+            this.setErrorHtml(errorHtml);
             // Mostrar el estado de error
             this.setError();
             // Hacemos log del error en la consola
@@ -53,10 +76,11 @@ export default class ArticleListManager extends UIManager {
     }
 
     renderArticles(articles) {
-        let html = "";
+        let html = `<div class="row">`;
         for (let article of articles) {
             html += this.renderArticle(article);
         }
+        html += `</div>`;
         // Metemos el HTML en el div que contiene los articulos
         this.setIdealHtml(html);
     }
@@ -129,16 +153,36 @@ export default class ArticleListManager extends UIManager {
             function(){alert('Something happened when trying to retrieve the data from article'+articleId);}
         );
 
-
-
-            // self.articleService.getDetail(articleId, function(data){ 
-            //     let newQty = parseInt(data.likes_qty) + 1;
-            //     data.likes_qty = newQty;
-            //     let article = data;
-            //     self.articleService.update(article, function(data){self.pubSub.publish("update-article", data);alert('updated');console.log(data);},function(){alert('something hapened during the updating')});
-
-            // }, function(){alert('Something happened when trying to retrieve the data from article'+articleId);});
     }
+
+    renderPagination(){
+
+        let html = `<div class="row">
+                    <div class="pagination-container">
+                    <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li>
+                        <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                        <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                        </li>
+                    </ul>
+                    </nav>
+                    </div>
+                    </div>`;
+        this.appendToIdealHtml(html);
+    }
+
 
 
 

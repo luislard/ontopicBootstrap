@@ -28,8 +28,8 @@ $separator-color: lighten(#C4C4C4, 10%);
         padding: 50px;
     }
     .article {
-        padding-left: 7px;
-        padding-right: 7px;
+        padding-left: $card-padding;
+        padding-right: $card-padding;
         .article-wrapper {
 
         
@@ -48,10 +48,12 @@ $separator-color: lighten(#C4C4C4, 10%);
             .article-img {
                 // object-fit: contain;
                 width: 100%;
+                height: 240px;
             }
             .article-video {
                 // object-fit: contain;
                 width: 100%;
+                height: 240px;
             }
             .article-title {
                 padding: $card-padding;
@@ -68,6 +70,8 @@ $separator-color: lighten(#C4C4C4, 10%);
                 font-weight: 300;
                 // border-bottom: 1px solid $separator-color;
                 margin-bottom: 3px;
+                max-height: 50px;
+                overflow: hidden; 
             }
             .article-stats {
                 padding: 7px 7px 3px 7px;
@@ -154,5 +158,10 @@ $separator-color: lighten(#C4C4C4, 10%);
                 
             }
         }
+    }
+
+    .pagination-container {
+        margin-bottom: 20px; 
+        padding-left: $card-padding; 
     }
 }
