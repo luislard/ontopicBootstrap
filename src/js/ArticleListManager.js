@@ -63,7 +63,7 @@ export default class ArticleListManager extends UIManager {
                             <div class="error-container">
                                 <img src="../img/oops.png"/>
                                 <p class="error-msg">
-                                    Oops something happened, please take a screenshot of this page and send us a message to eng.luisrosales@gmail.com
+                                    Oops something happened loading the articles, please try again, if the issue persist send us a message to <a href="mailto:eng.luisrosales@gmail.com">Support</a>
                                 </p>
                             </div>
                             `;
@@ -110,18 +110,23 @@ export default class ArticleListManager extends UIManager {
         html +=         `<div class="article-stats">
                             <div class="published-time">Published: <span class="text">${this.writeDate(article.published_at)}</span></div>
                             <div class="stats-buttons">
-                                <div class="msg-count"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> <span class="count">${article.comments.length}</span></div>
+                                <div class="msg-count"><a href="../detail.html#comments-section"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> <span class="count">${article.comments.length}</span></div>
                                 <div class="fav-count ${likedClass}"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> <span class="count">${article.likes_qty}</span></div>
                                 <div class="share-icon"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></div>
                             </div>
                         </div>
-                        <header class="article-title">${article.title}</header>
+                        <header class="article-title"><a href="../detail.html">${article.title}</a></header>
                         <p class="short-desc">${article.short_description}</p>
                         <div class="article-author">
                             <div class="wrapper">
-                                <div class="author-img-container">
-                                    <img src="../img/${article.author_img}" alt="${article.author_name}" class="article-author-img"/>
-                                </div>
+                                <div class="author-img-container">`;
+                                if (article.author_img !== null){
+                            html +=  `<img src="../img/${article.author_img}" alt="${article.author_name}" class="article-author-img">`;
+                                }else{
+                            html += `<img src="../img/No_image_available.svg" alt="${article.author_name}" class="article-author-img">`;
+
+                                }
+                    html += `</div>
                                 <div class="author-text-container">
                                     <div class="label">About the author:</div>
                                     <div class="author-name">${article.author_name}</div>

@@ -67,7 +67,7 @@ export default class ArticleDetailManager extends UIManager {
         let html = "";
         html += `<article class="col-xs-12 col-sm-6 col-md-4 article" data-id="${article.id}">
                     <div class="article-wrapper">
-                        <img src="${article.cover}" alt="${article.cover_alt}" class="article-img">
+                        <img src="../img/${article.cover}" alt="${article.cover_alt}" class="article-img">
                         <div class="article-stats">
                             <div class="published-time">Published: <span class="text">${this.writeDate(article.published_at)}</span></div>
                             <div class="stats-buttons">
@@ -77,11 +77,11 @@ export default class ArticleDetailManager extends UIManager {
                             </div>
                         </div>
                         <header class="article-title">${article.title}</header>
-                        <p class="short-desc">${article.short_description}</p>
+                        <p class="short-desc">${article.description}</p>
                         <div class="article-author">
                             <div class="wrapper">
                                 <div class="author-img-container">
-                                    <img src="${article.author_img}" alt="${article.author_name}" class="article-author-img"/>
+                                    <img src="../img/${article.author_img}" alt="${article.author_name}" class="article-author-img"/>
                                 </div>
                                 <div class="author-text-container">
                                     <div class="label">About the author:</div>
@@ -191,7 +191,7 @@ export default class ArticleDetailManager extends UIManager {
             return 'on ' + date.format('dddd');
 
         }else{
-            return 'at ' + date.format('YYYY-MM-DD HH:mm:ss');
+            return 'at ' + date.format('YYYY-MM-DD');
 
         }
 

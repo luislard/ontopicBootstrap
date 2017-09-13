@@ -7,7 +7,7 @@
       "cover": "containers.jpg",
       "cover_alt": "containers",
       "video": "",
-      "description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
+      "description": "Esta es la descripcion corta del artículo en cuestión, que tiene un <a href=\"https://www.google.es/\">enlace</a>, también tiene <strong>negritas</strong> e <i>italicas</i> corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
       "author_name": "Luis Rosales",
       "author_img": "author.jpeg",
       "published_at": "2017-08-29 20:00:14",
@@ -135,7 +135,7 @@
       "video": "",
       "description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
       "author_name": "Luis Rosales",
-      "author_img": "author.jpeg",
+      "author_img": null,
       "published_at": "2017-07-08 07:32:33",
       "likes_qty": 15,
       "comments": [

@@ -56,8 +56,7 @@ export default class CommentListManager extends UIManager {
 
     renderComment(comment) {
 
-        return `<li class="collection-item avatar" data-id="${comment.id}">
-                    <img src="./img/No_image_available.svg" alt="" class="circle">
+        return `<li class="collection-item" data-id="${comment.id}">
                     <div class="collection-content">
                         <span class="title">${comment.first_name} ${comment.last_name}</span>
                         <p>${comment.body}</p>

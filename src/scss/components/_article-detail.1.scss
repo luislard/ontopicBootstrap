@@ -6,8 +6,9 @@ $card-stats-font-size: 12px;
 $card-padding: 7px;
 $separator-color: lighten(#C4C4C4, 10%);
 
-.article-list {
+.article-detail {
     padding-top: 60px;
+
     .ui-status { display: none; }
     &.empty {
         .ui-status.empty { display: block; }
@@ -16,15 +17,7 @@ $separator-color: lighten(#C4C4C4, 10%);
         .ui-status.loading { display: block; }
     }
     &.error {
-        .ui-status.error { 
-            display: block; 
-            .error-container {
-                img {
-                    width: 100%;
-                    margin-top: 15px;
-                }
-            }
-        }
+        .ui-status.error { display: block; }
     }
     &.ideal {
         .ui-status.ideal { display: block; }
@@ -36,8 +29,8 @@ $separator-color: lighten(#C4C4C4, 10%);
         padding: 50px;
     }
     .article {
-        padding-left: $card-padding;
-        padding-right: $card-padding;
+        padding-left: 7px;
+        padding-right: 7px;
         .article-wrapper {
 
         
@@ -56,12 +49,6 @@ $separator-color: lighten(#C4C4C4, 10%);
             .article-img {
                 // object-fit: contain;
                 width: 100%;
-                height: 240px;
-            }
-            .article-video {
-                // object-fit: contain;
-                width: 100%;
-                height: 240px;
             }
             .article-title {
                 padding: $card-padding;
@@ -78,8 +65,6 @@ $separator-color: lighten(#C4C4C4, 10%);
                 font-weight: 300;
                 // border-bottom: 1px solid $separator-color;
                 margin-bottom: 3px;
-                max-height: 45px;
-                overflow: hidden; 
             }
             .article-stats {
                 padding: 7px 7px 3px 7px;
@@ -165,11 +150,40 @@ $separator-color: lighten(#C4C4C4, 10%);
                 }
                 
             }
-        }
-    }
 
-    .pagination-container {
-        margin-bottom: 20px; 
-        padding-left: $card-padding; 
+            .comments {
+                .comment-title {
+                    font-size: 14px;
+                    text-align: center;
+                }
+                .collection {
+                    padding: 0 10px;
+                    .collection-item {
+                        list-style-type: none;
+                        margin: 5px 0;
+                        &.avatar{
+                            
+                            .circle {
+                                position: absolute;
+                                width: 50px;
+                                display: inline-block;
+                            }
+                            .collection-content {
+                                position: relative;
+                                margin-left: 30%;
+                                width: 70%;
+                                display: inline-block;
+
+                                p {
+                                    font-size: 10px;
+                                }
+                            }
+
+                            
+                        }
+                    }
+                }
+            }
+        }
     }
 }
