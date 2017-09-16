@@ -16,10 +16,13 @@ export default class CommentListManager extends UIManager {
             setTimeout(function(){
                 let currentUrl = $(location).attr("href");
                 let currentTarget = currentUrl.split('#',2)[1];
-                $('html, body').animate({
-                        scrollTop: $('#'+currentTarget).offset().top + 'px'
-                    }, 1000, function(){ });
+                if(currentTarget){
+                    $('html, body').animate({
+                            scrollTop: $('#'+currentTarget).offset().top + 'px'
+                        }, 1000, function(){ });
+                }
                 },1000
+                
             );
             
         });

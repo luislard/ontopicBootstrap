@@ -15,10 +15,16 @@ export default class CommentFormManager extends UIManager {
         this.loadForm(function(){});
         this.setupSubmitEventHandler();
         // let self = this;
-        // this.element.on("click", ".article", function() {
+        // this.element.on("keyup", ".article", function() {
         //     let articleId = this.dataset.id;
         //     self.deleteSong(articleId);
         // });
+
+        this.element[0].addEventListener('keyup', function (event) {
+
+            // code to validate form
+
+        });
         
     }
 
@@ -31,11 +37,13 @@ export default class CommentFormManager extends UIManager {
         this.renderForm();
         // Quitamos el mensaje de cargando y mostramos la lista de comentarios
         this.setIdeal();
+
         callback();
     }
 
     renderForm() {
-        let html = `<div class="form-group">
+        let html = `<h2>Leave a Comment</h2>
+                    <div class="form-group">
                         <label for="first_name" class="label">First Name</label>
                         <input type="text" name="first_name" id="first_name" placeholder="e.g. Luis">
                         <span class="error no-visibility" id="first_name_error">This field should not be blank.</span>
@@ -61,6 +69,58 @@ export default class CommentFormManager extends UIManager {
                     </div>`;
         // Metemos el HTML en el div que contiene los articulos
         this.setIdealHtml(html);
+    }
+
+    /**
+     * This function counts the words of a string.
+     * @param str
+     * @returns {Number}
+     */
+    countWords(str){
+        // normalize spaces
+        str = str.replace(/\s+/gm," ");
+        // deleting start and end spaces
+        str = str.trim();
+        var arr = str.split(" ");
+        var count = arr.length;
+        if (arr[0] === ''){
+            return 0;
+        }else{
+            return count;
+        }
+    }
+
+    /**
+     * This functions checks if the given input has a valid email,
+     * returns true when the email is valid.
+     * @param inputEmail
+     * @returns {boolean}
+     */
+    checkEmailFormat(inputEmail){
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+        if(inputEmail.value.match(mailformat)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    /**
+     *
+     * This function checks if the input or textarea is not blank,
+     * returns true when is not blank.
+     *
+     * @param input|textarea
+     * @returns {boolean}
+     */
+    isInputNotBlank(input){
+
+        var content = input.value;
+        if(content != ""){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }
