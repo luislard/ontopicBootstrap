@@ -12,7 +12,7 @@ export default class ArticleDetailManager extends UIManager {
     }
 
     init() {
-        this.loadArticle();
+        this.loadArticle(function(){});
         let self = this;
         // this.element.on("click", ".article", function() {
         //     let articleId = this.dataset.id;
@@ -29,7 +29,7 @@ export default class ArticleDetailManager extends UIManager {
         });
     }
 
-    loadArticle() {
+    loadArticle(callback) {
         this.articleService.getDetail(1,article => {
             // Comprobamos si hay articulos
             if (article == 0) {
@@ -53,6 +53,7 @@ export default class ArticleDetailManager extends UIManager {
             // Hacemos log del error en la consola
             console.error("Error al cargar el articulo", error);
         });
+        callback();
     }
 
     renderArticle(article) {
@@ -65,9 +66,11 @@ export default class ArticleDetailManager extends UIManager {
         }
 
         let html = "";
-        html += `<article class="col-xs-12 col-sm-6 col-md-4 article" data-id="${article.id}">
+        html += `<article class="article" data-id="${article.id}">
                     <div class="article-wrapper">
-                        <img src="../img/${article.cover}" alt="${article.cover_alt}" class="article-img">
+                        <div class="img-container">
+                            <img src="../img/${article.cover}" alt="${article.cover_alt}" class="article-img">
+                        </div>
                         <div class="article-stats">
                             <div class="published-time">Published: <span class="text">${this.writeDate(article.published_at)}</span></div>
                             <div class="stats-buttons">
@@ -77,7 +80,7 @@ export default class ArticleDetailManager extends UIManager {
                             </div>
                         </div>
                         <header class="article-title">${article.title}</header>
-                        <p class="short-desc">${article.description}</p>
+                        <p class="long-desc">${article.description}</p>
                         <div class="article-author">
                             <div class="wrapper">
                                 <div class="author-img-container">

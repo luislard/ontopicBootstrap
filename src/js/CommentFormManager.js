@@ -12,24 +12,26 @@ export default class CommentFormManager extends UIManager {
     }
 
     init() {
-        this.loadForm();
+        this.loadForm(function(){});
         this.setupSubmitEventHandler();
         // let self = this;
         // this.element.on("click", ".article", function() {
         //     let articleId = this.dataset.id;
         //     self.deleteSong(articleId);
         // });
+        
     }
 
     setupSubmitEventHandler(){
 
     };
 
-    loadForm() {
+    loadForm(callback) {
         // Componemos el HTML con todos los comentarios
         this.renderForm();
         // Quitamos el mensaje de cargando y mostramos la lista de comentarios
         this.setIdeal();
+        callback();
     }
 
     renderForm() {

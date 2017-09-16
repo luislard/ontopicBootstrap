@@ -12,7 +12,17 @@ export default class CommentListManager extends UIManager {
     }
 
     init() {
-        this.loadComments();
+        this.loadComments(function(){
+            setTimeout(function(){
+                let currentUrl = $(location).attr("href");
+                let currentTarget = currentUrl.split('#',2)[1];
+                $('html, body').animate({
+                        scrollTop: $('#'+currentTarget).offset().top + 'px'
+                    }, 1000, function(){ });
+                },1000
+            );
+            
+        });
         let self = this;
         // this.element.on("click", ".article", function() {
         //     let articleId = this.dataset.id;
@@ -21,9 +31,10 @@ export default class CommentListManager extends UIManager {
         this.pubSub.subscribe("new-comment", (topic, comment) => {
             this.loadComments();
         });
+        
     }
 
-    loadComments() {
+    loadComments(callback) {
         this.commentService.list(comments => {
             // Comprobamos si hay comentarios
             if (comments.length == 0) {
@@ -35,12 +46,15 @@ export default class CommentListManager extends UIManager {
                 // Quitamos el mensaje de cargando y mostramos la lista de comentarios
                 this.setIdeal();
             }
+            
+
         }, error => {
             // Mostrar el estado de error
             this.setError();
             // Hacemos log del error en la consola
             console.error("Error al cargar los comentarios", error);
         });
+        callback();
     }
 
     renderComments(comments) {
@@ -52,6 +66,7 @@ export default class CommentListManager extends UIManager {
         html += "</ul>";
         // Metemos el HTML en el div que contiene los articulos
         this.setIdealHtml(html);
+        
     }
 
     renderComment(comment) {
