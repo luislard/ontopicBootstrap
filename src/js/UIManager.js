@@ -48,5 +48,8 @@ export default class UIManager {
     setIdealHtml(html) {
         this.element.find(".ui-status.ideal").html(html);
     }
+    appendToIdealHtml(html) {
+        this.element.find(".ui-status.ideal").append(html);
+    }
 
 }

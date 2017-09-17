@@ -12,5 +12,3 @@ articleListManager.init();
 
 const footerManager = new FooterManager(".footer","#list-container",);
 footerManager.init();
-
-

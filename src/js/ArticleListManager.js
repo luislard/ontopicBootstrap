@@ -36,15 +36,38 @@ export default class ArticleListManager extends UIManager {
         this.articleService.list(articles => {
             // Comprobamos si hay articulos
             if (articles.length == 0) {
+                let emptyHtml = `
+                            <div class="empty-container">
+                                <img src="../img/no_data.png"/>
+                                <p class="empty-msg">
+                                    There is no articles in this moment!
+                                    Please come by later...
+                                </p>
+                            </div>
+                            `;
+                this.setEmptyHtml(emptyHtml);
                 // Mostramos el estado vacío
                 this.setEmpty();
             } else {
                 // Componemos el HTML con todos los articulos
                 this.renderArticles(articles);
+                
+                this.renderPagination();
+                
                 // Quitamos el mensaje de cargando y mostramos la lista de articulos
                 this.setIdeal();
             }
         }, error => {
+
+            let errorHtml = `
+                            <div class="error-container">
+                                <img src="../img/oops.png"/>
+                                <p class="error-msg">
+                                    Oops something happened loading the articles, please try again, if the issue persist send us a message to <a href="mailto:eng.luisrosales@gmail.com">Support</a>
+                                </p>
+                            </div>
+                            `;
+            this.setErrorHtml(errorHtml);
             // Mostrar el estado de error
             this.setError();
             // Hacemos log del error en la consola
@@ -53,10 +76,11 @@ export default class ArticleListManager extends UIManager {
     }
 
     renderArticles(articles) {
-        let html = "";
+        let html = `<div class="row">`;
         for (let article of articles) {
             html += this.renderArticle(article);
         }
+        html += `</div>`;
         // Metemos el HTML en el div que contiene los articulos
         this.setIdealHtml(html);
     }
@@ -69,24 +93,40 @@ export default class ArticleListManager extends UIManager {
         if(isLiked == 'true'){
             likedClass = 'liked';
         }
-        return `<article class="col-xs-12 col-sm-6 col-md-4 article" data-id="${article.id}">
-                    <div class="article-wrapper">
-                        <img src="${article.cover}" alt="${article.cover_alt}" class="article-img">
-                        <div class="article-stats">
+
+        let html = '';
+
+        html += `<article class="col-xs-12 col-sm-6 col-md-4 article" data-id="${article.id}">
+                    <div class="article-wrapper">`
+                    if(article.video){
+        html +=         `<video  controls class="article-video">
+                            <source src="../videos/${article.video}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>`;
+                    }else{
+        html +=         `<img src="../img/${article.cover}" alt="${article.cover_alt}" class="article-img">`;
+                    }
+
+        html +=         `<div class="article-stats">
                             <div class="published-time">Published: <span class="text">${this.writeDate(article.published_at)}</span></div>
                             <div class="stats-buttons">
-                                <div class="msg-count"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> <span class="count">${article.comments.length}</span></div>
+                                <div class="msg-count"><a href="../detail.html#comments-section"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> <span class="count">${article.comments.length}</span></div>
                                 <div class="fav-count ${likedClass}"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> <span class="count">${article.likes_qty}</span></div>
                                 <div class="share-icon"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></div>
                             </div>
                         </div>
-                        <header class="article-title">${article.title}</header>
+                        <header class="article-title"><a href="../detail.html">${article.title}</a></header>
                         <p class="short-desc">${article.short_description}</p>
                         <div class="article-author">
                             <div class="wrapper">
-                                <div class="author-img-container">
-                                    <img src="${article.author_img}" alt="${article.author_name}" class="article-author-img"/>
-                                </div>
+                                <div class="author-img-container">`;
+                                if (article.author_img !== null){
+                            html +=  `<img src="../img/${article.author_img}" alt="${article.author_name}" class="article-author-img">`;
+                                }else{
+                            html += `<img src="../img/No_image_available.svg" alt="${article.author_name}" class="article-author-img">`;
+
+                                }
+                    html += `</div>
                                 <div class="author-text-container">
                                     <div class="label">About the author:</div>
                                     <div class="author-name">${article.author_name}</div>
@@ -95,6 +135,8 @@ export default class ArticleListManager extends UIManager {
                         </div>
                     </div>
                 </article>`;
+
+                return html;
     }
 
     deleteArticle(articleId) {
@@ -116,16 +158,36 @@ export default class ArticleListManager extends UIManager {
             function(){alert('Something happened when trying to retrieve the data from article'+articleId);}
         );
 
-
-
-            // self.articleService.getDetail(articleId, function(data){ 
-            //     let newQty = parseInt(data.likes_qty) + 1;
-            //     data.likes_qty = newQty;
-            //     let article = data;
-            //     self.articleService.update(article, function(data){self.pubSub.publish("update-article", data);alert('updated');console.log(data);},function(){alert('something hapened during the updating')});
-
-            // }, function(){alert('Something happened when trying to retrieve the data from article'+articleId);});
     }
+
+    renderPagination(){
+
+        let html = `<div class="row">
+                    <div class="pagination-container">
+                    <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li>
+                        <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                        <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                        </li>
+                    </ul>
+                    </nav>
+                    </div>
+                    </div>`;
+        this.appendToIdealHtml(html);
+    }
+
 
 
 
@@ -193,7 +255,7 @@ export default class ArticleListManager extends UIManager {
             return 'on ' + date.format('dddd');
 
         }else{
-            return 'at ' + date.format('YYYY-MM-DD HH:mm:ss');
+            return 'at ' + date.format('YYYY-MM-DD');
 
         }
 

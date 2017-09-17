@@ -1,3 +1,4 @@
+$background-color: white;
 $card-background-color: $font-navbar-color;
 $card-header-color: lighten(#737373, 20%);
 $card-header-font-size: 24px;
@@ -5,6 +6,11 @@ $card-desc-font-size: 14px;
 $card-stats-font-size: 12px;
 $card-padding: 7px;
 $separator-color: lighten(#C4C4C4, 10%);
+$img-width: 100%;
+
+body {
+    background-color: $background-color;
+}
 
 .article-detail {
     padding-top: 60px;
@@ -29,44 +35,31 @@ $separator-color: lighten(#C4C4C4, 10%);
         padding: 50px;
     }
     .article {
-        padding-left: 7px;
-        padding-right: 7px;
         .article-wrapper {
-
-        
-            background-color: $card-background-color;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-            border-radius: 2px;
-            padding: 0;
-            margin-bottom: 15px;
-            // box-sizing: border-box;
-            margin: 5px 0px;
-            &:hover {
-            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+            width: 100%;
+            .img-container {
+                text-align: center;
             }
-
             .article-img {
-                // object-fit: contain;
-                width: 100%;
+                margin: auto;
+                object-fit: cover;
+                width: $img-width;
+                max-height: 500px;
+                border: solid 2px gray;
+                border-radius: 10px;
             }
+
             .article-title {
                 padding: $card-padding;
-                font-size: $card-header-font-size;
+                font-size: $card-header-font-size + 5px;
                 color: darken($card-header-color,30%);
                 text-align: center;
                 font-weight: 300;
             }
-            .short-desc {
-                padding: $card-padding;
-                font-size: $card-desc-font-size;
-                color: darken($card-header-color,30%);
-                text-align: justify;
-                font-weight: 300;
-                // border-bottom: 1px solid $separator-color;
-                margin-bottom: 3px;
-            }
+            
             .article-stats {
+                width: $img-width;
+                margin: auto;
                 padding: 7px 7px 3px 7px;
                 font-size: $card-stats-font-size;
                 color: $card-header-color;
@@ -107,11 +100,20 @@ $separator-color: lighten(#C4C4C4, 10%);
                     }
                 }
             }
-
+            .long-desc {
+                padding: $card-padding;
+                font-size: $card-desc-font-size;
+                color: darken($card-header-color,30%);
+                text-align: justify;
+                font-weight: 300;
+                // border-bottom: 1px solid $separator-color;
+                margin-bottom: 3px;
+                line-height: 2em;
+            }
             .article-author {
                 width: 100%;
                 margin: auto auto auto auto;
-                padding: 5px 5px 20px 5px;
+                padding: 15px 5px 20px 5px;
                 display: block;
                 // border-bottom: 1px solid $separator-color;
                 .wrapper {
@@ -126,6 +128,7 @@ $separator-color: lighten(#C4C4C4, 10%);
                         .article-author-img {
                             
                             width: 100%;
+                            max-width: 110px;
                             border-radius: 50%;
                         }
                     }
@@ -150,40 +153,8 @@ $separator-color: lighten(#C4C4C4, 10%);
                 }
                 
             }
-
-            .comments {
-                .comment-title {
-                    font-size: 14px;
-                    text-align: center;
-                }
-                .collection {
-                    padding: 0 10px;
-                    .collection-item {
-                        list-style-type: none;
-                        margin: 5px 0;
-                        &.avatar{
-                            
-                            .circle {
-                                position: absolute;
-                                width: 50px;
-                                display: inline-block;
-                            }
-                            .collection-content {
-                                position: relative;
-                                margin-left: 30%;
-                                width: 70%;
-                                display: inline-block;
-
-                                p {
-                                    font-size: 10px;
-                                }
-                            }
-
-                            
-                        }
-                    }
-                }
-            }
         }
     }
+
+    
 }

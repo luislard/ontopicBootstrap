@@ -4,13 +4,14 @@
       "id": 1,
       "title": "Latindada.com new technologies",
       "short_description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
-      "cover": "../img/containers.jpg",
+      "cover": "containers.jpg",
       "cover_alt": "containers",
-      "description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
+      "video": "",
+      "description": "<p>Esta es la descripcion larga del artículo en cuestión, que tiene un <a href=\"https://www.google.es/\">enlace</a>, también tiene <strong>negritas</strong> e <i>italicas</i>.</p> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
       "author_name": "Luis Rosales",
-      "author_img": "../img/author.jpeg",
+      "author_img": "author.jpeg",
       "published_at": "2017-08-29 20:00:14",
-      "likes_qty": 16,
+      "likes_qty": 15,
       "comments": [
         {
           "id": "1"
@@ -24,11 +25,12 @@
       "id": 2,
       "title": "Latindada.com new technologies",
       "short_description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
-      "cover": "../img/containers.jpg",
+      "cover": "containers.jpg",
       "cover_alt": "containers",
+      "video": "",
       "description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
       "author_name": "Luis Rosales",
-      "author_img": "../img/author.jpeg",
+      "author_img": "author.jpeg",
       "published_at": "2017-08-29 20:00:14",
       "likes_qty": 13,
       "comments": [
@@ -44,11 +46,12 @@
       "id": 3,
       "title": "Latindada.com new technologies",
       "short_description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
-      "cover": "../img/containers.jpg",
+      "cover": "containers.jpg",
       "cover_alt": "containers",
+      "video": "343465699.mp4",
       "description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
       "author_name": "Luis Rosales",
-      "author_img": "../img/author.jpeg",
+      "author_img": "author.jpeg",
       "published_at": "2017-08-28 13:23:40",
       "likes_qty": 14,
       "comments": [
@@ -64,11 +67,138 @@
       "id": 4,
       "title": "Latindada.com new technologies",
       "short_description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
-      "cover": "../img/containers.jpg",
+      "cover": "containers.jpg",
       "cover_alt": "containers",
+      "video": "",
       "description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
       "author_name": "Luis Rosales",
-      "author_img": "../img/author.jpeg",
+      "author_img": "author.jpeg",
+      "published_at": "2017-07-08 07:32:33",
+      "likes_qty": 15,
+      "comments": [
+        {
+          "id": "1"
+        },
+        {
+          "id": "2"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Latindada.com new technologies",
+      "short_description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
+      "cover": "containers.jpg",
+      "cover_alt": "containers",
+      "video": "",
+      "description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
+      "author_name": "Luis Rosales",
+      "author_img": "author.jpeg",
+      "published_at": "2017-07-08 07:32:33",
+      "likes_qty": 15,
+      "comments": [
+        {
+          "id": "1"
+        },
+        {
+          "id": "2"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Latindada.com new technologies",
+      "short_description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
+      "cover": "containers.jpg",
+      "cover_alt": "containers",
+      "video": "",
+      "description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
+      "author_name": "Luis Rosales",
+      "author_img": "author.jpeg",
+      "published_at": "2017-07-08 07:32:33",
+      "likes_qty": 15,
+      "comments": [
+        {
+          "id": "1"
+        },
+        {
+          "id": "2"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Latindada.com new technologies",
+      "short_description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
+      "cover": "containers.jpg",
+      "cover_alt": "containers",
+      "video": "",
+      "description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
+      "author_name": "Luis Rosales",
+      "author_img": null,
+      "published_at": "2017-07-08 07:32:33",
+      "likes_qty": 15,
+      "comments": [
+        {
+          "id": "1"
+        },
+        {
+          "id": "2"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Latindada.com new technologies",
+      "short_description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
+      "cover": "containers.jpg",
+      "cover_alt": "containers",
+      "video": "",
+      "description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
+      "author_name": "Luis Rosales",
+      "author_img": "author.jpeg",
+      "published_at": "2017-07-08 07:32:33",
+      "likes_qty": 15,
+      "comments": [
+        {
+          "id": "1"
+        },
+        {
+          "id": "2"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Latindada.com new technologies",
+      "short_description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
+      "cover": "containers.jpg",
+      "cover_alt": "containers",
+      "video": "",
+      "description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
+      "author_name": "Luis Rosales",
+      "author_img": "author.jpeg",
+      "published_at": "2017-07-08 07:32:33",
+      "likes_qty": 15,
+      "comments": [
+        {
+          "id": "1"
+        },
+        {
+          "id": "2"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Latindada.com new technologies",
+      "short_description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
+      "cover": "containers.jpg",
+      "cover_alt": "containers",
+      "video": "",
+      "description": "Esta es la descripcion corta del artícul en cuestión, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo, esta es la descripcion corta del artículo en cuestión,sta es la descripcion corta del artícul en cuestión,sta es la descripcion corta del artículo ...",
+      "author_name": "Luis Rosales",
+      "author_img": "author.jpeg",
       "published_at": "2017-07-08 07:32:33",
       "likes_qty": 15,
       "comments": [
