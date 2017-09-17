@@ -79,7 +79,7 @@ export default class ArticleDetailManager extends UIManager {
                                 <div class="share-icon"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></div>
                             </div>
                         </div>
-                        <header class="article-title">${article.title}</header>
+                        <header class="article-title"><h1>${article.title}</h1></header>
                         <p class="long-desc">${article.description}</p>
                         <div class="article-author">
                             <div class="wrapper">

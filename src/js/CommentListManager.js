@@ -37,7 +37,7 @@ export default class CommentListManager extends UIManager {
         
     }
 
-    loadComments(callback) {
+    loadComments() {
         this.commentService.list(comments => {
             // Comprobamos si hay comentarios
             if (comments.length == 0) {
@@ -57,11 +57,10 @@ export default class CommentListManager extends UIManager {
             // Hacemos log del error en la consola
             console.error("Error al cargar los comentarios", error);
         });
-        callback();
     }
 
     renderComments(comments) {
-        let html = `<h4 class="comment-title">Comments</h4>
+        let html = `<h2 class="comment-title">Comments</h2>
                         <ul class="collection">`;
         for (let comment of comments) {
             html += this.renderComment(comment);
