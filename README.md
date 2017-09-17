@@ -2,8 +2,12 @@
 
 Here we talk about **Startups**.
 
-### To-Do
-We have a lot of things to do yet, it doesn't make sense to specify them (I am being a little bit lazy).
+### Tu run this project
+1. Clone the repo.
+2. cd to the repo.
+3. Run *npm install*.
+4. Run *npm server run*.
+5. Run *gulp*.
 
 **Have a nice day and remember,**
 
