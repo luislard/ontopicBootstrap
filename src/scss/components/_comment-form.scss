@@ -34,7 +34,13 @@ $separator-color: lighten(#C4C4C4, 10%);
     }
 
     .form-group {
-
+        .no-visibility {
+            visibility: hidden;
+        }
+        .hasError {
+            border-color: red;
+            border-width: 3px;
+        }
     }
 
     // form {
@@ -51,6 +57,7 @@ $separator-color: lighten(#C4C4C4, 10%);
         font-size: $font-size-small;
         font-weight: bold;
         text-transform: uppercase;
+        color: #333;
     }
 
     input {

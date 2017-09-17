@@ -14,7 +14,7 @@ export default class CommentFormManager extends UIManager {
     init() {
         this.loadForm(function(){});
         this.setupSubmitEventHandler();
-        // let self = this;
+        let self = this;
         // this.element.on("keyup", ".article", function() {
         //     let articleId = this.dataset.id;
         //     self.deleteSong(articleId);
@@ -23,6 +23,13 @@ export default class CommentFormManager extends UIManager {
         this.element[0].addEventListener('keyup', function (event) {
 
             // code to validate form
+            if(self.isFormValid()){
+                console.log('valid form');
+            }else{
+                console.log('not valid form');
+
+            }
+            
 
         });
         
@@ -57,12 +64,15 @@ export default class CommentFormManager extends UIManager {
                     <div class="form-group">
                         <label for="email" class="label">Email</label>
                         <input type="email" name="email" id="email" placeholder="e.g. mail@somedomain.com">
-                        <span class="error no-visibility" id="email_error">This field should not be blank.</span>
+                        <span class="error no-visibility" id="email_error">This field should not be blank and must be a valid email.</span>
                     </div>
                     <div class="form-group">
+                    <div class="word-count-container">
+                        <p>You have <span class="word-count">120</span> words left.</p>
+                    </div>
                         <label for="comment" class="label">Write a Comment</label>
                         <textarea name="comment" id="comment"></textarea>
-                        <span class="error no-visibility" id="comment_error">This field should not be blank.</span>
+                        <span class="error no-visibility" id="comment_error">This field should not be blank and shoul contain less than 120 words.</span>
                     </div>
                     <div class="form-group">
                         <button type="button" id="send">Send</button>
@@ -91,14 +101,29 @@ export default class CommentFormManager extends UIManager {
     }
 
     /**
+     * This function check if the amount of words permited is not exceeded
+     */
+    isWordCountNotExeeded(textAreaInput,amountOfWordsPermitted){
+        if(this.countWords(textAreaInput.val()) <= amountOfWordsPermitted) {
+            textAreaInput.removeClass('hasError');
+            textAreaInput.next('.error').addClass('no-visibility');
+            return true;
+        }else{
+            textAreaInput.addClass('hasError');
+            textAreaInput.next('.error').removeClass('no-visibility');
+            return false;
+        }
+    }
+
+    /**
      * This functions checks if the given input has a valid email,
      * returns true when the email is valid.
-     * @param inputEmail
+     * @param JqueryInputEmail
      * @returns {boolean}
      */
     checkEmailFormat(inputEmail){
         var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
-        if(inputEmail.value.match(mailformat)){
+        if(inputEmail.val().match(mailformat)){
             return true;
         }else{
             return false;
@@ -110,16 +135,84 @@ export default class CommentFormManager extends UIManager {
      * This function checks if the input or textarea is not blank,
      * returns true when is not blank.
      *
-     * @param input|textarea
+     * @param Jqueryinput|textarea
      * @returns {boolean}
      */
     isInputNotBlank(input){
 
-        var content = input.value;
+        var content = input.val();
         if(content != ""){
             return true;
         }else{
             return false;
+        }
+    }
+
+    addError(element){
+        element.addClass('hasError');
+        element.next('.error').removeClass('no-visibility');
+    }
+
+    removeError(element){
+        element.removeClass('hasError');
+        element.next('.error').addClass('no-visibility');
+    }
+
+    isFormValid(){
+        let nameInput = $('#first_name');
+        let lastNameInput = $('#last_name');
+        let emailInput = $('#email');
+        let commentTextarea = $('#comment');
+        let errors = [];
+
+        if(this.isInputNotBlank(nameInput)){
+            this.removeError(nameInput);
+            errors.push(false);
+        }else{
+            this.addError(nameInput);
+            errors.push(true);
+        }
+        if(this.isInputNotBlank(lastNameInput)){
+            this.removeError(lastNameInput);
+            errors.push(false);
+        }else{
+            this.addError(lastNameInput);
+            errors.push(true);
+        }
+        if(this.isInputNotBlank(emailInput)){
+            if(this.checkEmailFormat(emailInput)){
+                this.removeError(emailInput);
+                errors.push(false);
+            }else{
+                this.addError(emailInput);
+                errors.push(true);
+
+            }
+        }else{
+            this.addError(emailInput);
+            errors.push(true);
+
+        }
+        if(this.isInputNotBlank(commentTextarea) && this.isWordCountNotExeeded(commentTextarea,120)){
+            this.removeError(commentTextarea);
+            errors.push(false);
+        }else{
+            this.addError(commentTextarea);
+            errors.push(true);
+
+        }
+
+        var errorCount = 0;
+        for (var i = 0; i < errors.length; i++) {
+            if (errors[i] === true){
+                errorCount++;
+            }
+        }
+
+        if(errorCount > 0){
+            return false;
+        }else{
+            return true;
         }
     }
 
