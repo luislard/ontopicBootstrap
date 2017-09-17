@@ -2,6 +2,7 @@ import UIManager from './UIManager';
 // import * as moment from 'moment';
 const $ = require("jquery");
 let moment = require('moment');
+const amountOfWordsPermittedValue = 120;
 
 export default class CommentFormManager extends UIManager {
 
@@ -29,15 +30,66 @@ export default class CommentFormManager extends UIManager {
                 console.log('not valid form');
 
             }
+            self.updateWordsLeftCount($('#comment').val(),$('#word-count'), amountOfWordsPermittedValue);
             
-
         });
+
+        
+
+        this.element.find('#send')[0].addEventListener('click',function(event){
+            self.element.submit();
+        });
+        
         
     }
 
-    setupSubmitEventHandler(){
+    send() {
+        this.setLoading();
+        const comment = {
+            article_id: 1,
+            first_name: this.element.find('#first_name').val(),
+            last_name: this.element.find('#last_name').val(),
+            email: this.element.find('#email').val(),
+            body: this.element.find('#comment').val()
+        };
+        let self = this;
+        this.commentService.save(comment, success => {
+            this.pubSub.publish("new-comment", comment); // publicamos el evento que informa de la creación de un comentario
+            this.resetForm();
+            self.updateWordsLeftCount($('#comment').val(),$('#word-count'), amountOfWordsPermittedValue);
+            this.setIdeal();
+        }, error => {
+            this.setErrorHtml("Se ha producido un error al guardar el comentario en el servidor.");
+            this.setError();
+        });
+    }
 
-    };
+    resetForm() {
+        this.element[0].reset(); // resetea el formulario
+    }
+
+    disableFormControls() {
+        this.element.find("input, button").attr("disabled", true);
+    }
+
+    enableFormControls() {
+        this.element.find("input, button").attr("disabled", false);
+    }
+
+
+    setupSubmitEventHandler() {
+        this.element.on("submit", () => {
+            this.validateAndSendData();
+            // en jQuery podemos hacer un preventDefault haciendo un return false en los manejadores de evento
+            return false; // == event.preventDefault();
+        });
+    }
+
+    validateAndSendData() {
+        if (this.isFormValid()) {
+            this.send();
+        }
+    }
 
     loadForm(callback) {
         // Componemos el HTML con todos los comentarios
@@ -68,11 +120,11 @@ export default class CommentFormManager extends UIManager {
                     </div>
                     <div class="form-group">
                     <div class="word-count-container">
-                        <p>You have <span class="word-count">120</span> words left.</p>
+                        <p>You have <span class="word-count" id="word-count">${amountOfWordsPermittedValue}</span> words left.</p>
                     </div>
                         <label for="comment" class="label">Write a Comment</label>
                         <textarea name="comment" id="comment"></textarea>
-                        <span class="error no-visibility" id="comment_error">This field should not be blank and shoul contain less than 120 words.</span>
+                        <span class="error no-visibility" id="comment_error">This field should not be blank and should contain less than ${amountOfWordsPermittedValue} words.</span>
                     </div>
                     <div class="form-group">
                         <button type="button" id="send">Send</button>
@@ -98,6 +150,16 @@ export default class CommentFormManager extends UIManager {
         }else{
             return count;
         }
+    }
+
+    /**
+     * 
+     * @param {string} str 
+     * @param {*} element 
+     * @param {integer} amountOfWordsPermitted 
+     */
+    updateWordsLeftCount(str,element,amountOfWordsPermitted){
+        element.html(amountOfWordsPermitted - this.countWords(str));
     }
 
     /**
@@ -193,7 +255,7 @@ export default class CommentFormManager extends UIManager {
             errors.push(true);
 
         }
-        if(this.isInputNotBlank(commentTextarea) && this.isWordCountNotExeeded(commentTextarea,120)){
+        if(this.isInputNotBlank(commentTextarea) && this.isWordCountNotExeeded(commentTextarea,amountOfWordsPermittedValue)){
             this.removeError(commentTextarea);
             errors.push(false);
         }else{

@@ -11,7 +11,7 @@
       "author_name": "Luis Rosales",
       "author_img": "author.jpeg",
       "published_at": "2017-08-29 20:00:14",
-      "likes_qty": 15,
+      "likes_qty": 16,
       "comments": [
         {
           "id": "1"
@@ -235,6 +235,38 @@
       "last_name": "Papellido",
       "email": "mail@somedomain.com",
       "body": "some third comment"
+    },
+    {
+      "article_id": "1",
+      "first_name": "a",
+      "last_name": "b",
+      "email": "mail@mail.com",
+      "body": "hola ",
+      "id": 4
+    },
+    {
+      "article_id": "1",
+      "first_name": "luisin",
+      "last_name": "rosalin",
+      "email": "mail@maks.com",
+      "body": "un comentario nulo en la existencia.",
+      "id": 5
+    },
+    {
+      "article_id": "1",
+      "first_name": "luis",
+      "last_name": "rosales2",
+      "email": "mail@mil.com",
+      "body": "dasdjflñasdfj asñdlfkj asdñlkfjañslkdjf asdhajskfh lkjshas",
+      "id": 6
+    },
+    {
+      "article_id": "1",
+      "first_name": "hola hola",
+      "last_name": "pachanga",
+      "email": "mail@quepasa.com",
+      "body": "asdñflkaj sdasdlkj ñprem ",
+      "id": 7
     }
   ]
 }
